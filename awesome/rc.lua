@@ -71,7 +71,7 @@ run_once("psi-plus")
 -- {{{ Variable definitions
 
 -- beautiful init
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/copland/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/ares/theme.lua")
 
 -- common
 modkey     = "Mod4"
