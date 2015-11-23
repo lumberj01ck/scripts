@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+
+#curl -s "http://weather.yahooapis.com/forecastrss?p=RSXX1222&u=c" | grep yweather:condition | sed 's/.*temp="//;s/" .*//g;s/-/─ /'
+t=$(curl -s "http://weather.yahooapis.com/forecastrss?p=RSXX1222&u=c" | grep yweather:condition | sed 's/.*temp="//;s/" .*//g')
+
+if [ $t -gt 0 ]
+then
+	echo "+$t"
+elif [ $t -lt 0 ]
+then
+	echo "$t" | sed 's/-/─/g'
+else
+	echo "$t"
+fi 
+
+#if [ $t -lt 0 ]
+#then
+#echo "─ $t°C"
+#fi
+#
+#if [ $t -gt 0 ]
+#then 
+#echo "+ $t°C"
+#fi
+#
+#if [ $t -eq 0 ]
+#then 
+#echo "$t°C"
+#fi
